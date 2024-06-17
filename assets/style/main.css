@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
@@ -16,9 +20,16 @@ a {
 ul {
     list-style: none;
 }
+
 img {
     max-width: 100%;
     height: auto;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .poppins-bold {
@@ -33,24 +44,23 @@ img {
     font-style: italic;
 }
 
-
 .poppins-extrabold-italic {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: italic;
 }
 
-/* ---------- コンポーネント ---------- */
+/* ---------- 共通 ---------- */
 
 .container {
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 1rem;
 }
 
 @media (min-width: 768px) {
     .container {
-        padding: 0 20px;
+        padding: 0 1.25rem;
     }
 }
 
@@ -60,31 +70,34 @@ img {
     align-items: center;
 }
 
+.button:hover {
+    opacity: 0.6;
+}
+
 .pink {
     color: #F11F8D;
 }
 
 .section__title {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 700;
     text-align: center;
     line-height: 1.4;
 }
 
 .section__title--large {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 @media (min-width: 768px) {
     .section__title {
-        font-size: 36px;
+        font-size: 2.25rem;
     }
 
     .section__title--large {
-        font-size: 54px;
+        font-size: 3.375rem;
     }
 }
-
 
 /* ---------- ヘッダー ---------- */
 .header {
@@ -98,8 +111,9 @@ img {
     padding-left: 1rem;
     background-color: #fff;
     box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.1);
-    z-index: 1;
+    z-index: 100;
 }
+
 .header__wrapper {
     display: flex;
     width: 100%;
@@ -107,9 +121,8 @@ img {
     align-items: center;
 }
 
-
 .header__logo {
-    width: 166px;
+    width: 10.375rem;
     line-height: 0;
 }
 
@@ -118,11 +131,13 @@ img {
         height: 6.3125rem;
         padding-left: 0;
     }
+
     .header__wrapper {
         max-width: 75rem;
         margin: auto;
         padding: 0 1.25rem;
     }
+
     .header__logo {
         width: 21%;
         max-width: 15.0625rem;
@@ -179,6 +194,7 @@ img {
 
     .header__hamburger-menu-list-item a {
         color: #fff;
+        display: block;
     }
 
     .header__hamburger-menu-list-item::before {
@@ -189,6 +205,7 @@ img {
         left: 0.875rem;
         font-size: 1.625rem;
     }
+
     .header__hamburger-menu-button {
         background-color: #fff;
         color: #005BAC;
@@ -216,25 +233,28 @@ img {
     }
 
     .header__global-menu-list-item {
-        font-size: clamp(0.5rem, 1.67vw, 1.25rem);
+        font-size: clamp(1rem, 1.67vw, 1.25rem);
     }
+
     .header__hamburger-menu-list-item::before {
         content: none;
     }
+
     .header__global-menu-button {
         width: clamp(10rem, 23.5vw, 17.625rem);
         height: 3.8125rem;
         border-radius: 1.9063rem;
         background-image: linear-gradient(to right, #0271E0, #53A2F0);
         color: #fff;
-        font-size: clamp(0.5rem, 1.667vw, 1.25rem);
+        font-size: clamp(1rem, 1.667vw, 1.25rem);
         font-weight: 700;
     }
+
 }
 
 /* ---------- メインビジュアル ---------- */
 .main-visual {
-    margin-top: 70px;
+    margin-top: 4.375rem;
     background-image: url('/assets/image/mv_sp_01.jpg');
     background-position: right top;
     background-size: cover;
@@ -243,7 +263,7 @@ img {
 }
 
 .main-visual__container {
-    padding-top: 34px;
+    padding-top: 2.125rem;
 }
 
 .main-visual__achievement {
@@ -251,7 +271,7 @@ img {
 }
 
 .main-visual__achievement img {
-    width: 24px;
+    width: 1.5rem;
 }
 
 .main-visual__achievement-text {
@@ -344,6 +364,7 @@ img {
     align-items: center;
     padding: 1.5rem 3.875rem;
 }
+
 .button-group__button {
     width: 100%;
     height: 3rem;
@@ -356,93 +377,116 @@ img {
 .button-group__button:nth-child(2) {
     background-color: #F6AA00;
 }
+
 .button-group__button:nth-child(3) {
     background-color: #3AC8AD;
 }
 
 @media (min-width: 768px) {
     .button-group {
-        margin-bottom: 72px;
+        margin-bottom: 4.5rem;
     }
+
     .button-group__container {
         flex-direction: row;
-        column-gap: 2.5rem;
+        column-gap: clamp(1rem, 4vw, 2.5rem);
         margin-top: -2.3438rem;
-        padding: 0 3.125rem;
+        padding: 0 1.25rem;
     }
+
     .button-group__button {
         width: 21.25rem;
         height: 4.6875rem;
         border-radius: 2.3438rem;
-        font-size: clamp(1rem, 2vw, 1.5rem);
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
     }
 }
 
 /* ---------- 選ばれる3つの理由 ---------- */
-.section__title--reasons {
-    margin-bottom: 17px;
+.reasons {
+    margin-top: -4.375rem;
+    padding-top: 4.375rem;
 }
+
+.section__title--reasons {
+    margin-bottom: 1.0625rem;
+}
+
 .reasons__img {
     width: 100%;
 }
+
 .reasons__img img {
     width: 100%;
 }
 
 .reasons__point {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.5;
 }
+
 .reasons__point--large {
-    font-size: 36px;
+    font-size: 2.25rem;
 }
+
 .reasons__title {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
-    margin-bottom: 9px;
+    margin-bottom: 0.5625rem;
 }
 
 .reasons__description {
-    margin-bottom: 34px;
+    margin-bottom: 2.125rem;
 }
 
 @media (min-width: 768px) {
     .reasons {
-        margin-bottom: 66px;
+        margin-top: -6.3125rem;
+        padding-top: 6.3125rem;
+        margin-bottom: 4.125rem;
     }
+
     .section__title--reasons {
-        margin-bottom: 32px;
+        margin-bottom: 2rem;
     }
+
     .reasons__item {
         display: flex;
         flex-direction: row;
-        column-gap: 40px;
-        margin-bottom: 41px;
+        column-gap: 2.5rem;
+        margin-bottom: 2.5625rem;
     }
+
     .reasons__item:nth-of-type(2) {
         flex-direction: row-reverse;
     }
+
     .reasons__img {
         width: 50%;
     }
+
     .reasons__img img {
         width: 100%;
     }
+
     .reasons__text {
         width: 50%;
     }
+
     .reasons__point {
-        font-size: 28px;
+        font-size: 1.75rem;
         line-height: 1.4;
     }
+
     .reasons__point--large {
-        font-size: 42px;
+        font-size: 2.625rem;
     }
+
     .reasons__title {
-        font-size: 24px;
+        font-size: 1.5rem;
         line-height: 1.75;
-        margin-bottom: 11px;
+        margin-bottom: 0.6875rem;
     }
 }
 
@@ -450,57 +494,82 @@ img {
 .application {
     background-color: rgba(255, 85, 85, 0.1);;
 }
+
+.application-1 {
+    margin-bottom: 4rem;
+}
+
+.application-2 {
+    margin-bottom: 4.0625rem;
+}
+
 .application__container {
-    padding: 40px 35px;
+    padding: 2.5rem 2.1875rem;
 }
 .application__text {
-    margin-bottom: 9px;
-    padding: 0 8px;
+    margin-bottom: 0.5625rem;
+    padding: 0 0.5rem;
     text-align: center;
 }
+
 .application__button {
     width: 100%;
-    height: 69px;
-    border-radius: 34.5px;
+    height: 4.3125rem;
+    border-radius: 2.1563rem;
     background-image: linear-gradient(to right, #0271E0, #53A2F0);
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
 }
+
 @media (min-width: 768px) {
     .application__container {
-        padding: 54px 20px;
+        padding: 3.375rem 1.25rem;
     }
+
+    .application-1 {
+        margin-bottom: 4.625rem;
+    }
+
+    .application-2 {
+        margin-bottom: 4.625rem;
+    }
+
     .application__text {
-        margin-bottom: 18px;
+        margin-bottom: 1.125rem;
     }
+
     .application__button {
-        width: 360px;
-        height: 75px;
-        font-size: 24px;
+        width: 22.5rem;
+        height: 4.6875rem;
+        font-size: 1.5rem;
         margin: auto;
-        padding-left: 20px;
+        padding-left: 1.25rem;
     }
 }
 
 /* ---------- コース・目的 ---------- */
 .course {
-    margin-top: 64px;
-    margin-bottom: 63px;
+    margin-top: -4.375rem;
+    padding-top: 4.375rem;
+    margin-bottom: 3.9375rem;
 }
+
 .section__title--course {
-    padding-left: 20px;
-    margin-bottom: 21px;
+    padding-left: 1.25rem;
+    margin-bottom: 1.3125rem;
 }
 
 @media (min-width: 768px) {
     .course {
-        margin-top: 74px;
-        margin-bottom: 65px;
+        margin-top: -6.3125rem;
+        padding-top: 6.3125rem;
+        margin-bottom: 4.0625rem;
     }
+
     .section__title--course {
         padding-left: 0;
-        margin-bottom: 34px;
+        margin-bottom: 2.125rem;
     }
 }
 
@@ -515,34 +584,38 @@ img {
 }
 
 .st > .nav {
-    column-gap: 15px;
+    column-gap: 0.9375rem;
     flex-direction: row !important;
-    padding: 0 16px;
+    padding: 0 1rem;
     box-shadow: none;
 }
 
 .st-theme-basic > .nav .nav-link {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 18px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
     line-height: 1.4;
     background-color: #F0F0F0;
     color: rgba(51, 51, 51, 0.5);
-    border-radius: 12px 12px 0 0;
+    border-radius: 0.75rem 0.75rem 0 0;
 }
+
 .st-theme-basic > .nav .nav-link.active {
     color: #333 !important;
     background-color: #F2F9FF;
 }
+
 .st-theme-basic > .nav .nav-link.active::after {
     background-color: unset !important;
 }
+
 .tab-content {
     background-color: #F2F9FF;;
-    padding: 28px 16px;
+    padding: 1.75rem 1rem;
     height: auto !important;
 }
+
 .st > .tab-content > .tab-pane {
     padding: 0;
 }
@@ -550,13 +623,15 @@ img {
 @media (min-width: 768px) {
     .st > .nav {
         padding: 0;
-        column-gap: 35px;
+        column-gap: 2.1875rem;
     }
+
     .st-theme-basic > .nav .nav-link {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
+
     .tab-content {
-        padding: 32px 2px 0 32px;
+        padding: 2rem 0.125rem 0 2rem;
     }
 }
 
@@ -566,30 +641,39 @@ img {
 }
 
 .course__tab-item {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     position: relative;
 }
 
+.course__tab-wrap {
+    margin-bottom: 7px;
+}
+
 .course__tab-img {
+    display: block;
     width: 100%;
+    height: auto;
 }
 
 .course__tab-img img {
+    display: block;
     width: 100%;
+    height: auto;
+    border-radius: 4%;
 }
 
 .course__tab-text {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
-    padding-left: 21px;
+    padding-left: 1.3125rem;
     line-height: 2.1;
 }
 
 .course__tab-text i {
-    font-size: 26px;
+    font-size: 1.625rem;
     color: #005BAC;
     position: absolute;
-    left: -6px;
+    left: -0.375rem;
     line-height: 1.4;
 }
 
@@ -597,59 +681,81 @@ img {
     .course__tab-pane {
         flex-direction: row;
         flex-wrap: wrap;
-        column-gap: 31px;
+        column-gap: 1.9375rem;
     }
+
     .course__tab-item {
-        width: calc(50% - 31px);
-        margin-bottom: 28px;
+        width: calc(50% - 1.9375rem);
+        margin-bottom: 1.75rem;
     }
+
+    .course__tab-wrap {
+        width: 100%;
+        border-radius: 0.75rem;
+        overflow: hidden;
+    }
+
+    .course__tab-img img {
+        border-radius: 0.75rem;
+    }
+
     .course__tab-text {
-        font-size: 20px;
-        padding-left: 29px;
+        font-size: 1.25rem;
+        padding-left: 1.8125rem;
         line-height: 2.5;
     }
+
     .course__tab-text i {
-        font-size: 30px;
+        font-size: 1.875rem;
+    }
+
+    .course__tab-link:hover .course__tab-img img{
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
     }
 }
 
 /* ---------- 費用 ---------- */
 .cost {
-    margin-top: 65px;
-    margin-bottom: 60px;
+    margin-top: -4.375rem;
+    padding-top: 4.375rem;
+    margin-bottom: 3.75rem;
 }
+
 .section__title--cost {
-    padding-left: 16px;
-    margin-bottom: 19px;
+    padding-left: 1rem;
+    margin-bottom: 1.1875rem;
 }
 
 @media (min-width: 768px) {
     .cost {
-        margin-top: 75px;
-        margin-bottom: 70px;
+        margin-top: -6.3125rem;
+        padding-top: 6.3125rem;
+        margin-bottom: 4.375rem;
     }
+
     .section__title--cost {
         padding-left: 0;
-        margin-bottom: 33px;
+        margin-bottom: 2.0625rem;
     }
 }
 
 .cost__table {
     border-collapse: collapse;
-    border: 3px solid #ccc;
+    border: 0.1875rem solid #ccc;
     width: 100%;
     text-align: center;
 }
 
 .cost__table th {
     background-color: #F5F5F5;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
 }
 
 .cost__table td {
-    border: 1px solid #ccc;
-    height: 64px;
+    border: 0.0625rem solid #ccc;
+    height: 4rem;
 }
 
 .cost__table--header1 {
@@ -658,51 +764,180 @@ img {
 
 .cost__table--header2 {
     width: 66%;
-    padding-right: 16px;
+    padding-right: 1rem;
 }
 
 .cost__table-price {
-    font-size: 28px;
-    padding-right: 5px;
+    font-size: 1.75rem;
+    padding-right: 0.3125rem;
 }
 
 .cost__table-price--6 {
-    padding-left: 22px;
+    padding-left: 1.375rem;
 }
 
 .cost__table-price--small {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 @media (min-width: 768px) {
     .cost__table {
-        max-width: 600px;
+        max-width: 37.5rem;
         margin: auto;
-        font-size: 18px;
+        font-size: 1.125rem;
     }
+
     .cost__table th {
-        padding-top: 22px;
-        padding-bottom: 20px;
+        padding-top: 1.375rem;
+        padding-bottom: 1.25rem;
     }
+
     .cost__table td {
-        height: 78px;
+        height: 4.875rem;
     }
+
     .cost__table--header1 {
-        width: 144px;
+        width: 9rem;
     }
 
     .cost__table--header2 {
-        width: 455px;
+        width: 28.4375rem;
         padding-right: 0;
     }
+
     .cost__table-price {
-    font-size: 32px;
-    padding-right: 0px;
+    font-size: 2rem;
+    padding-right: 0;
     }
+
     .cost__table-price--6 {
     padding-left: 0;
     }
+
     .cost__table-price--small {
-        font-size: 18px;
+        font-size: 1.125rem;
+    }
+}
+
+/* ---------- インフォメーション ---------- */
+.info__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.info__item {
+    width: 100%;
+    height: 10.625rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.info__link {
+    width: 100%;
+    height: 10.625rem;
+    display: block;
+}
+
+.info__img {
+    background-position: top left;
+    background-size: cover;
+    width: 100%;
+    height: 10.625rem;
+    position: relative;
+}
+
+.info__img--faq {
+    background-image: url(/assets/image/info_photo_sp_01.jpg);
+}
+
+.info__img--search {
+    background-image: url(/assets/image/info_photo_sp_02.jpg);
+}
+
+.info__img::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.info__text {
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 0;
+    color: #fff;
+    z-index: 2;
+    position: absolute;
+    top:50%;
+    left: 1rem;
+}
+
+@media (min-width: 768px) {
+    .info__group {
+        flex-direction: row;
+    }
+
+    .info__item {
+        width: 50%;
+        height: 20rem;
+    }
+
+    .info__link {
+        height: 20rem;
+    }
+
+    .info__img {
+        height: 20rem;
+        background-position: top center;
+    }
+
+    .info__img--faq {
+        background-image: url(/assets/image/info_photo_pc_01.jpg);
+    }
+
+    .info__img--search {
+        background-image: url(/assets/image/info_photo_pc_02.jpg);
+    }
+
+    .info__img::after {
+        opacity: 0;
+    }
+
+    .info__text {
+        font-size: 2rem;
+        top:50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .info__link:hover .info__img {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+}
+
+/* ---------- フッター ---------- */
+.footer {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.1875rem;
+    padding: 0.25rem 0 0 1rem;
+}
+
+.footer small {
+    font-size: 0.8125rem;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        height: 7.5rem;
+        padding: 0;
     }
 }
