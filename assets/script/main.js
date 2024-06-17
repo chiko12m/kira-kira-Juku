@@ -14,7 +14,6 @@ $('.header__hamburger-menu-list-item').on('click', function () {
 });
 
 // スマートタブ
-$(function() {
-    // SmartTab initialize
-    $('#smarttab').smartTab();
+$('#smarttab').smartTab({
+    enableUrlHash: false
 });
