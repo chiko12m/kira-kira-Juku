@@ -1,0 +1,708 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #333;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* ---------- コンポーネント ---------- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pink {
+    color: #F11F8D;
+}
+
+.section__title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.section__title--large {
+    font-size: 40px;
+}
+
+@media (min-width: 768px) {
+    .section__title {
+        font-size: 36px;
+    }
+
+    .section__title--large {
+        font-size: 54px;
+    }
+}
+
+
+/* ---------- ヘッダー ---------- */
+.header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.375rem;
+    width: 100%;
+    padding-left: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.header__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header__logo {
+    width: 166px;
+    line-height: 0;
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 6.3125rem;
+        padding-left: 0;
+    }
+    .header__wrapper {
+        max-width: 75rem;
+        margin: auto;
+        padding: 0 1.25rem;
+    }
+    .header__logo {
+        width: 21%;
+        max-width: 15.0625rem;
+    }
+}
+
+/* ハンバーガーメニュー */
+@media (max-width: 767px) {
+    .header__hamburger-button {
+        width: 4.375rem;
+        height: 4.375rem;
+        background-color: #005BAC;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1.0625rem 0;
+    }
+
+    .header__hamburger-line {
+        width: 1.875rem;
+        height: 0.3125rem;
+        background-color: #fff;
+        border-radius: 0.0625rem;
+    }
+
+    .header__hamburger-menu {
+        position: absolute;
+        top: 4.375rem;
+        right: -100%;
+        width: 100%;
+        height: 20.6875rem;
+        padding: 1.25rem;
+        background-color: #005BAC;
+        opacity: 0;
+        transition: right 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header__hamburger-menu--open {
+        right: 0;
+        opacity: 1;
+    }
+
+    .header__hamburger-menu-list-item {
+        border-bottom: 0.0625rem solid #fff;
+        display: block;
+        width: 100%;
+        height: 2.9375rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+        padding-left: 1.6875rem;
+    }
+
+    .header__hamburger-menu-list-item a {
+        color: #fff;
+    }
+
+    .header__hamburger-menu-list-item::before {
+        font-family: 'Bootstrap Icons';
+        content: '\F135' ;
+        color: #fff;
+        position: absolute;
+        left: 0.875rem;
+        font-size: 1.625rem;
+    }
+    .header__hamburger-menu-button {
+        background-color: #fff;
+        color: #005BAC;
+        font-size: 1.125rem;
+        font-weight: 700;
+        width: 100%;
+        height: 4.125rem;
+        border-radius: 2.0625rem;
+        margin: 2rem 0;
+    }
+}
+
+/* グローバルナビゲーション */
+@media (min-width: 768px) {
+    .header__global-menu {
+        display: flex;
+        column-gap: clamp(0.5rem, 4vw, 3rem);
+    }
+    .header__global-menu-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: clamp(0.5rem, 4vw, 3rem);
+        flex-wrap: nowrap;
+    }
+
+    .header__global-menu-list-item {
+        font-size: clamp(0.5rem, 1.67vw, 1.25rem);
+    }
+    .header__hamburger-menu-list-item::before {
+        content: none;
+    }
+    .header__global-menu-button {
+        width: clamp(10rem, 23.5vw, 17.625rem);
+        height: 3.8125rem;
+        border-radius: 1.9063rem;
+        background-image: linear-gradient(to right, #0271E0, #53A2F0);
+        color: #fff;
+        font-size: clamp(0.5rem, 1.667vw, 1.25rem);
+        font-weight: 700;
+    }
+}
+
+/* ---------- メインビジュアル ---------- */
+.main-visual {
+    margin-top: 70px;
+    background-image: url('/assets/image/mv_sp_01.jpg');
+    background-position: right top;
+    background-size: cover;
+    width: 100%;
+    height: 15.625rem;
+}
+
+.main-visual__container {
+    padding-top: 34px;
+}
+
+.main-visual__achievement {
+    display: flex;
+}
+
+.main-visual__achievement img {
+    width: 24px;
+}
+
+.main-visual__achievement-text {
+    font-size: 0.6875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-visual__achievement-text--medium {
+    font-size: 1.5625rem;
+    line-height: 1.4;
+}
+
+.main-visual__achievement-text--large {
+    font-size: 2.25rem;
+}
+
+.main-visual__headline {
+    margin-top: 1rem;
+}
+
+.main-visual__headline-text {
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-visual__headline-text--large {
+    color: #005BAC;
+    font-size: 1.5625rem;
+    font-weight: 900;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .main-visual {
+        margin-top: 6.3125rem;
+        background-image: url('/assets/image/mv_pc_01.jpg');
+        background-position: top center;
+        background-size: cover;
+        height: 40.6875rem;
+    }
+
+    .main-visual__container {
+        padding-top: 6.5rem;
+        padding-left: 3.125rem;
+    }
+
+    .main-visual__achievement img {
+        width: 3.2875rem;
+    }
+
+    .main-visual__achievement-text {
+        font-size: 1.25rem;
+        margin: 0 1.25rem;
+    }
+
+
+    .main-visual__achievement-text--medium {
+        font-size: 3.375rem;
+        line-height: 1.4;
+        margin-left: 0.75rem;
+    }
+
+    .main-visual__achievement-text--large {
+        font-size: 4.625rem;
+    }
+
+    .main-visual__headline {
+        margin-top: 2rem;
+    }
+
+    .main-visual__headline-text {
+        font-size: 2.0625rem;
+    }
+
+    .main-visual__headline-text--large {
+        font-size: 3.75rem;
+    }
+}
+
+/* ---------- ボタングループ ---------- */
+.button-group__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 3.875rem;
+}
+.button-group__button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    background-color: #77CB33;
+}
+
+.button-group__button:nth-child(2) {
+    background-color: #F6AA00;
+}
+.button-group__button:nth-child(3) {
+    background-color: #3AC8AD;
+}
+
+@media (min-width: 768px) {
+    .button-group {
+        margin-bottom: 72px;
+    }
+    .button-group__container {
+        flex-direction: row;
+        column-gap: 2.5rem;
+        margin-top: -2.3438rem;
+        padding: 0 3.125rem;
+    }
+    .button-group__button {
+        width: 21.25rem;
+        height: 4.6875rem;
+        border-radius: 2.3438rem;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+}
+
+/* ---------- 選ばれる3つの理由 ---------- */
+.section__title--reasons {
+    margin-bottom: 17px;
+}
+.reasons__img {
+    width: 100%;
+}
+.reasons__img img {
+    width: 100%;
+}
+
+.reasons__point {
+    font-size: 24px;
+    line-height: 1.5;
+}
+.reasons__point--large {
+    font-size: 36px;
+}
+.reasons__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 9px;
+}
+
+.reasons__description {
+    margin-bottom: 34px;
+}
+
+@media (min-width: 768px) {
+    .reasons {
+        margin-bottom: 66px;
+    }
+    .section__title--reasons {
+        margin-bottom: 32px;
+    }
+    .reasons__item {
+        display: flex;
+        flex-direction: row;
+        column-gap: 40px;
+        margin-bottom: 41px;
+    }
+    .reasons__item:nth-of-type(2) {
+        flex-direction: row-reverse;
+    }
+    .reasons__img {
+        width: 50%;
+    }
+    .reasons__img img {
+        width: 100%;
+    }
+    .reasons__text {
+        width: 50%;
+    }
+    .reasons__point {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .reasons__point--large {
+        font-size: 42px;
+    }
+    .reasons__title {
+        font-size: 24px;
+        line-height: 1.75;
+        margin-bottom: 11px;
+    }
+}
+
+/* ---------- 入学説明会に申し込む ---------- */
+.application {
+    background-color: rgba(255, 85, 85, 0.1);;
+}
+.application__container {
+    padding: 40px 35px;
+}
+.application__text {
+    margin-bottom: 9px;
+    padding: 0 8px;
+    text-align: center;
+}
+.application__button {
+    width: 100%;
+    height: 69px;
+    border-radius: 34.5px;
+    background-image: linear-gradient(to right, #0271E0, #53A2F0);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+@media (min-width: 768px) {
+    .application__container {
+        padding: 54px 20px;
+    }
+    .application__text {
+        margin-bottom: 18px;
+    }
+    .application__button {
+        width: 360px;
+        height: 75px;
+        font-size: 24px;
+        margin: auto;
+        padding-left: 20px;
+    }
+}
+
+/* ---------- コース・目的 ---------- */
+.course {
+    margin-top: 64px;
+    margin-bottom: 63px;
+}
+.section__title--course {
+    padding-left: 20px;
+    margin-bottom: 21px;
+}
+
+@media (min-width: 768px) {
+    .course {
+        margin-top: 74px;
+        margin-bottom: 65px;
+    }
+    .section__title--course {
+        padding-left: 0;
+        margin-bottom: 34px;
+    }
+}
+
+@media (max-width: 767px) {
+    .course__container {
+        padding: 0;
+    }
+}
+
+.st-theme-basic {
+    border: none;
+}
+
+.st > .nav {
+    column-gap: 15px;
+    flex-direction: row !important;
+    padding: 0 16px;
+    box-shadow: none;
+}
+
+.st-theme-basic > .nav .nav-link {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    background-color: #F0F0F0;
+    color: rgba(51, 51, 51, 0.5);
+    border-radius: 12px 12px 0 0;
+}
+.st-theme-basic > .nav .nav-link.active {
+    color: #333 !important;
+    background-color: #F2F9FF;
+}
+.st-theme-basic > .nav .nav-link.active::after {
+    background-color: unset !important;
+}
+.tab-content {
+    background-color: #F2F9FF;;
+    padding: 28px 16px;
+    height: auto !important;
+}
+.st > .tab-content > .tab-pane {
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .st > .nav {
+        padding: 0;
+        column-gap: 35px;
+    }
+    .st-theme-basic > .nav .nav-link {
+        font-size: 24px;
+    }
+    .tab-content {
+        padding: 32px 2px 0 32px;
+    }
+}
+
+.course__tab-pane {
+    display: flex;
+    flex-direction: column;
+}
+
+.course__tab-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.course__tab-img {
+    width: 100%;
+}
+
+.course__tab-img img {
+    width: 100%;
+}
+
+.course__tab-text {
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 21px;
+    line-height: 2.1;
+}
+
+.course__tab-text i {
+    font-size: 26px;
+    color: #005BAC;
+    position: absolute;
+    left: -6px;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .course__tab-pane {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 31px;
+    }
+    .course__tab-item {
+        width: calc(50% - 31px);
+        margin-bottom: 28px;
+    }
+    .course__tab-text {
+        font-size: 20px;
+        padding-left: 29px;
+        line-height: 2.5;
+    }
+    .course__tab-text i {
+        font-size: 30px;
+    }
+}
+
+/* ---------- 費用 ---------- */
+.cost {
+    margin-top: 65px;
+    margin-bottom: 60px;
+}
+.section__title--cost {
+    padding-left: 16px;
+    margin-bottom: 19px;
+}
+
+@media (min-width: 768px) {
+    .cost {
+        margin-top: 75px;
+        margin-bottom: 70px;
+    }
+    .section__title--cost {
+        padding-left: 0;
+        margin-bottom: 33px;
+    }
+}
+
+.cost__table {
+    border-collapse: collapse;
+    border: 3px solid #ccc;
+    width: 100%;
+    text-align: center;
+}
+
+.cost__table th {
+    background-color: #F5F5F5;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.cost__table td {
+    border: 1px solid #ccc;
+    height: 64px;
+}
+
+.cost__table--header1 {
+    width: 34%;
+}
+
+.cost__table--header2 {
+    width: 66%;
+    padding-right: 16px;
+}
+
+.cost__table-price {
+    font-size: 28px;
+    padding-right: 5px;
+}
+
+.cost__table-price--6 {
+    padding-left: 22px;
+}
+
+.cost__table-price--small {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .cost__table {
+        max-width: 600px;
+        margin: auto;
+        font-size: 18px;
+    }
+    .cost__table th {
+        padding-top: 22px;
+        padding-bottom: 20px;
+    }
+    .cost__table td {
+        height: 78px;
+    }
+    .cost__table--header1 {
+        width: 144px;
+    }
+
+    .cost__table--header2 {
+        width: 455px;
+        padding-right: 0;
+    }
+    .cost__table-price {
+    font-size: 32px;
+    padding-right: 0px;
+    }
+    .cost__table-price--6 {
+    padding-left: 0;
+    }
+    .cost__table-price--small {
+        font-size: 18px;
+    }
+}
