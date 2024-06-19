@@ -85,7 +85,7 @@ img {
     line-height: 1.4;
 }
 
-.section__title-large {
+.section__title .-large {
     font-size: 2.5rem;
 }
 
@@ -94,7 +94,7 @@ img {
         font-size: 2.25rem;
     }
 
-    .section__title-large {
+    .section__title .-large {
         font-size: 3.375rem;
     }
 }
@@ -176,7 +176,7 @@ img {
         transition: right 0.3s ease, opacity 0.3s ease;
     }
 
-    .header__hamburger-menu-open {
+    .header__hamburger-menu--open {
         right: 0;
         opacity: 1;
     }
@@ -282,12 +282,12 @@ img {
     align-items: center;
 }
 
-.main-visual__achievement-text-medium {
+.main-visual__achievement-text .-medium {
     font-size: 1.5625rem;
     line-height: 1.4;
 }
 
-.main-visual__achievement-text-large {
+.main-visual__achievement-text .-large {
     font-size: 2.25rem;
 }
 
@@ -301,7 +301,7 @@ img {
     flex-direction: column;
 }
 
-.main-visual__headline-text-large {
+.main-visual__headline-text .-large {
     color: #005BAC;
     font-size: 1.5625rem;
     font-weight: 900;
@@ -332,13 +332,13 @@ img {
     }
 
 
-    .main-visual__achievement-text-medium {
+    .main-visual__achievement-text .-medium {
         font-size: 3.375rem;
         line-height: 1.4;
         margin-left: 0.75rem;
     }
 
-    .main-visual__achievement-text-large {
+    .main-visual__achievement-text .-large {
         font-size: 4.625rem;
     }
 
@@ -350,7 +350,7 @@ img {
         font-size: 2.0625rem;
     }
 
-    .main-visual__headline-text-large {
+    .main-visual__headline-text .-large {
         font-size: 3.75rem;
     }
 }
@@ -425,7 +425,7 @@ img {
     line-height: 1.5;
 }
 
-.reasons__point-large {
+.reasons__point .-large {
     font-size: 2.25rem;
 }
 
@@ -479,7 +479,7 @@ img {
         line-height: 1.4;
     }
 
-    .reasons__point-large {
+    .reasons__point .-large {
         font-size: 2.625rem;
     }
 
@@ -776,7 +776,7 @@ img {
     padding-left: 1.375rem;
 }
 
-.cost__table-price-small {
+.cost__table-price .-small {
     font-size: 1rem;
 }
 
@@ -814,7 +814,7 @@ img {
     padding-left: 0;
     }
 
-    .cost__table-price-small {
+    .cost__table-price .-small {
         font-size: 1.125rem;
     }
 }
