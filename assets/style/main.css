@@ -528,6 +528,11 @@ img {
     font-weight: 700;
 }
 
+.application__button:nth-child(2) {
+    background-color: #F6AA00;
+    background-image: none;
+}
+
 @media (min-width: 768px) {
     .application__container {
         padding: 3.375rem 1.25rem;
